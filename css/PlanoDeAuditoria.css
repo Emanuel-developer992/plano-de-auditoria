@@ -142,6 +142,42 @@
     text-align: center !important;
 }
 
+.requisito-input2 {
+    border-color: #5c6bc0 !important;
+    background-color: #5c6bc0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    pointer-events: none !important;
+}
+
+.auditor-input2 {
+    border-color: #3949ab !important;
+    background-color: #3949ab !important;
+    color: white !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    pointer-events: none !important;
+}
+
+.auditado-input2 {
+    border-color: #283593 !important;
+    background-color: #283593 !important;
+    color: white !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    pointer-events: none !important;
+}
+
+.status-input2 {
+    border-color: #fbc02d !important;
+    background-color: #fbc02d !important;
+    color: white !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    pointer-events: none !important;
+}
+
 .modal-orion {
 
     line-height: 50px !important;
@@ -204,19 +240,25 @@ a.note:hover span {
 	display: block;
 	position: absolute;
 	/*width: 150px;*/
-	top: 2em;
+	top: -5em;
 	text-align: justify;
-	left: 9.5em;
+	right: 9em;
 	font: 10px Verdana, arial, helvetica, sans-serif;
 	padding: 10px 10px;
 	border: 1px solid #999;
 	background: white;
 	color: #000;
-    width: 320px;
-    height: 120px;
+    width: 213px;
+    height: 80px;
 }
 
 a.note:hover textarea {
-    width: 300px !important;
-    height: 100px;
+    width: 190px !important;
+    height: 60px;
+}
+
+.nav-scroll {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: 650px !important;
 }

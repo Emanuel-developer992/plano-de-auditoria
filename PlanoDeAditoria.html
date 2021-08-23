@@ -33,14 +33,52 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item tondini-title">
-                <a class="nav-link active nav-close" data-toggle="tab" href="#cadastro_requisito_nav">T-Class Work</a>
+                <a class="nav-link nav-close" data-toggle="tab" href="#menu_nav">Menu</a>
+                </li>
+                <li class="nav-item tondini-title">
+                <a class="nav-link nav-close" data-toggle="tab" href="#cadastro_requisito_nav">T-Class Work</a>
+                </li>
+                <li class="nav-item tondini-title">
+                <a class="nav-link nav-close" data-toggle="tab" href="#painel_nav">Painel</a>
                 </li>
             </ul>
 
             <div class="tab-content">
 
+                <!-- Painel de Cadastros-->
+                <div id="menu_nav" class="container tab-pane active" aria-selected="true">
+
+                    <div class="row">
+                        <div style="margin-left: 15%;">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="image/Card Cadastro.png">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><b>Cadastro de Plano de Auditoria</b></h3>
+                                        <p class="card-text p-cinza">Inicie o cadastro de novos planos de auditoria ao enviar essa solicitação.</p>
+                                        <button name="select1" type="button" class="btn btn-info" onclick="openCadastro()">Selecionar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="image/Card Painel.png">
+                                    <div class="card-body">
+                                        <h3 class="card-title"><b>Painel de Plano de Auditoria</b></h3>
+                                        <p class="card-text p-cinza">Visualize e filtre os planos de auditoria já cadastrados.</p>
+                                        <button name="select2" type="button" class="btn btn-info" onclick="openPainel()">Selecionar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
                 <!-- Cadastro de Cliente-->
-                <div id="cadastro_cliente_nav" class="container tab-pane active" aria-selected="true">
+                <div id="cadastro_requisito_nav" class="container tab-pane nav-close" aria-selected="true">
 
                     <!--Cadastro Principal-->
                     <div class="row">
@@ -49,6 +87,7 @@
                         <div class="container">
                         <h1 class="display-4 title">Plano de Auditoria</h1>
                         <p class="lead subtitle">Cadastro de Auditorias Planejadas</p>
+                        <button type="button" id="exit1" class="btn btn-info" onclick="exitCadastro()"><i class="fluigicon fluigicon-chevron-left icon-xs" style="color: white;"></i> Voltar</button>
                         </div>
                     </div>
 
@@ -201,7 +240,7 @@
                                                 'displayKey':'idenCod',
                                                 'datasetId':'DSFormulariodeCadastrodeNorma',
                                                 'maximumSelectionLength':'1',
-                                                'placeholder':'Escolha o usuário',
+                                                'placeholder':'Selecione...',
                                                 'fields':[
                                                     {
                                                     'field':'idenCod',
@@ -255,7 +294,7 @@
 
                                     <!-- 16º Input-->
                                     <div class="form-group col-md-6">
-                                        <label for="name_norma">Nome dos Auditores</label>
+                                        <label for="name_norma">Nome do Auditor</label>
                                         <select name="name_norma" type="text" class="form-control" id="name_norma">
                                             <option value="">Selecione...</option>
                                         </select>
@@ -268,6 +307,112 @@
                     </div>
 
                 </div>
+
+                <!-- Painel de Cadastros-->
+                <div id="painel_nav" class="container tab-pane nav-close" aria-selected="true">
+
+                    <div class="row">
+
+                        <div class="jumbotron jumbotron-fluid">
+                            <div class="container">
+                                <h1 class="display-4 title">Plano de Auditoria</h1>
+                                <p class="lead subtitle">Painel de registros</p>
+                                <button type="button" id="exit2" class="btn btn-info" onclick="exitPainel()"><i class="fluigicon fluigicon-chevron-left icon-xs" style="color: white;"></i> Voltar</button>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info" role="alert">Consulte e filtre os plano de auditorias existentes</div>
+
+                        <div class="row col-lg-12">
+
+                            <div class="row col-lg-3 div-column1">
+
+                                <h1>Filtre os Planos</h1>
+
+                                <h3>Data de Execução</h3>
+                                <!-- 9° Input -->
+                                <div class="form-group col-md-12">
+                                    <label for="f_de">De:</label>
+                                    <input name="f_de" type="date" class="form-control" id="f_de">
+                                </div>
+
+                                <!-- 10° Input -->
+                                <div class="form-group col-md-12">
+                                    <label for="f_ate">Até:</label>
+                                    <input name="f_ate" type="date" class="form-control" id="f_ate">
+                                </div>
+
+                                <hr style="width: 90%;">
+
+                                <!-- 12° Input -->
+                                <div class="form-group col-md-12">
+                                    <label for="f_norma">Norma</label>
+                                    <input name="f_norma" type="text" class="form-control" id="f_norma">
+                                </div>
+
+                                 <!-- 13° Input -->
+                                 <div class="form-group col-md-12">
+                                    <label for="f_auditor">Auditor</label>
+                                    <input name="f_auditor" type="text" class="form-control" id="f_auditor">
+                                </div>
+
+                                
+                                <button class="btn btn-info" onclick="filtrar();">Filtrar</button>
+
+                                <div class="clearfix"></div>
+                                <br>                           
+                                <button class="btn btn-danger" onclick="limpar();">Limpar</button>
+                               
+                               
+
+                            </div>
+
+                            <div id="div_column2" class="row col-lg-9 div-column2 nav-scroll">
+
+                                <div id="div_tb">    
+
+                                    <div style="margin-left: 4%;">
+                                        <table tablename="tb_planejamento" id="tb_planejamento" class="table table-striped table-hover" noaddbutton="true" nodeletebutton="true">
+                                            <thead>
+                                            <tr>
+                                                <th>Data</th>
+                                                <th>Horário</th>
+                                                <th>Área</th>
+                                                <th>Norma</th>
+                                                <th>Requis.</th>
+                                                <th>Auditor</th>
+                                                <th>Auditado</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td><input id="tb_data" name="tb_data" style="width: 168px;" class="invisible-input" readonly></td>
+                                                <td><input id="tb_hrs" name="tb_hrs" style="width: 100px;" class="invisible-input" readonly></td>
+                                                <td><input id="tb_area" name="tb_area" style="width: 20px;" class="invisible-input" readonly></td>
+                                                <td><input id="tb_norma" name="tb_norma" style="width: 75px;" class="invisible-input" readonly></td>
+                                                <td><a href="#" id="a_tb_requisito" class="note"><button id="tb_requisito" name="tb_requisito" style="width: 50px; color: white;" class="form-control requisito-input2"><i class="flaticon flaticon-view icon-sm"></i></i></button><span><textarea id="t_tb_requisito" name="t_tb_requisito" class="invisible-text" readonly></textarea></span></a></td>
+                                                <td><a href="#" id="a_tb_auditor" class="note"><button id="tb_auditor" name="tb_auditor" style="width: 50px; color: white;" class="form-control auditor-input2"><i class="flaticon flaticon-view icon-sm"></i></i></button><span><textarea id="t_tb_auditor" name="t_tb_auditor" class="invisible-text" readonly></textarea></span></a></td>
+                                                <td><a href="#" id="a_tb_auditado" class="note"><button id="tb_auditado" name="tb_auditado" style="width: 50px; color: white;" class="form-control auditado-input2"><i class="flaticon flaticon-view icon-sm"></i></i></button><span><textarea id="t_tb_auditado" name="t_tb_auditado" class="invisible-text" readonly></textarea></span></a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="div_img" class="nav-close">
+                                    <img src="image/3369473.jpg" style="width: 80%; margin-left: 15%;">
+                                </div>
+
+                                
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
             <!--MyScript-->
